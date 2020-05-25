@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="canvas" style="border: 1px solid black;"></canvas>
+    <script>
+
+        var canvas = document.getElementById('canvas');
+        canvas.width = innerWidth;
+        canvas.height = innerHeight;
+        var c = canvas.getContext('2d');
+
+        class Ball {
+            constructor(x, y, radius, color) {
+                this.x = x;
+                this.y = y;
+                this.radius = radius;
+                this.color = color;
+            }
+
+            draw() {
+                c.beginPath();
+                c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+                c.fillStyle = this.color;
+                c.fill();
+                c.stroke();
+                c.closePath();
+            }
+        }
+
+
+        let center_ball = new Ball(canvas.width / 2, canvas.height / 2, 20, 'red');
+        center_ball.draw();
+
+
+        let ball1 = new Ball(50, 50, 30, 'blue');
+        ball1.draw();
+
+        let ball2 = new Ball(canvas.width - 50, 50, 30, "black");
+        ball2.draw();
+
+        let ball3 = new Ball(canvas.width - 50, canvas.height - 40, 30, "aqua");
+        ball3.draw();
+
+        let ball4 = new Ball(50, canvas.height - 40, 30, "pink");
+        ball4.draw();
+
+
+    </script>
+</body>
+
+</html>

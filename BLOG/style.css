@@ -1,0 +1,15 @@
+.photo {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+}
+.bodytext {
+    width: 600px;
+    /* text-indent: 20%; */
+}
+#last {color:yellowgreen;
+font-size: 200%;
+font-weight: 300%;} 

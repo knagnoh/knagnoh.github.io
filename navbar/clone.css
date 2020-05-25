@@ -1,0 +1,201 @@
+.navbar {
+    height: 119px;
+    width: 1349px;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    position: fixed;
+    z-index: 100;
+    background-color:#f53d2d;
+}
+.up{
+    height: 2.125rem;
+    z-index: 400;
+    background: transparent;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+}
+.upleft {
+    display: flex;
+    align-items: center;
+    margin-left: 70px;
+    color: #fff;
+    text-decoration: none;
+    font-size: .8125rem;
+    font-weight: 300;
+    font-family: Helvetica;
+    margin-top: 10px;
+    width: inherit;
+    max-width: 1200px;
+}
+.link1 {
+    color: #fff;
+    text-decoration: none;
+    font-size: .8125rem;
+    font-weight: 300;
+    padding: 0 .4375rem;
+    border-right: 2px solid hsla(0,0%,100%,.22);
+}
+.link2 {
+    display: flex;
+    padding: 0 .4375rem;
+}
+.link3 {
+    border-left: 2px solid hsla(0,0%,100%,.22);
+    padding: 0 .4375rem;
+}
+.iconsocial {
+    padding-right: 0;
+}
+.facebook {
+    width: 16px;
+    height: 16px;
+    background-size: 562.5% 356.25%;
+    background-position: 64.86486486486487% 12.195121951219512%;
+    display: inline-block;
+    overflow: hidden;
+    text-indent: -9999px;
+    text-align: left;
+    margin-right: 5px;
+    background-image: url(https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/e7fba41cad3372e2d3294d28ccbf4611.png);
+}
+.insta {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    overflow: hidden;
+    text-indent: -9999px;
+    background-size: 562.5% 356.25%;
+    background-position: 58.108108108108105% 75.60975609756098%;
+    background-image: url(https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/e7fba41cad3372e2d3294d28ccbf4611.png);
+}
+.upspace {
+    width: 545px;
+    flex: 1;
+}
+.upright {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+li {
+    display: list-item;
+    padding-right:20px;
+    text-align: -webkit-match-parent;
+}
+.special {
+    border-left: 2px solid hsla(0,0%,100%,.22);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.bottom {
+    min-width: inherit;
+    background: transparent;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.05);
+    box-sizing: border-box;
+    z-index: 300;
+}
+.bottomwrapper {
+    box-sizing: border-box;
+    display: flex;
+    height: 5.3125rem;
+    justify-content: space-between;
+    padding: 1rem 0 .625rem;
+    margin-left: 74.500px;
+    margin-right: 74.500px;
+}
+.shopeelogo {
+    position: relative;
+    top: -.1875rem;
+    padding-right: 2.5rem;
+    box-sizing: border-box;
+    color: -webkit-link;
+    cursor: pointer;
+}
+.logo {
+    width: 162px;
+    height: 50px;
+    display: block;
+    fill: #fff;
+    position: relative;
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+.searchbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 840px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+}
+body, html {
+    font-family: Helvetica;
+    color: rgba(0,0,0,.8);
+    line-height: 1.2;
+}
+.search {
+    padding-right: 3px;
+    padding-left: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    height: 34px;
+    width: 384px;
+}
+.search2 {
+    flex: 1;
+    display: flex;
+    -webkit-box-flex: 1;
+    width: 774px;
+    height: 34px;
+}
+.button {
+    background: #fb5533;
+    color: #fff;
+    height: 34px;
+    padding-left:15px;
+    padding-right: 15px;
+    min-width: 60px;
+    max-width: 190px;
+    display: inline-flex;
+    box-sizing: border-box;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.09);
+    border-radius: 2px;
+    border: 0;
+    align-items: center;
+    font: inherit;
+    margin: 0;
+}
+.keyword {
+    display: flex;
+    width: 100%;
+    flex: 1;
+    font-size: .875rem;
+    width: 184px;
+    height: 19px;
+}
+.carticon {
+    flex: 1;
+    padding-bottom: 5px;
+    margin: 0 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    box-sizing: border-box;
+}

@@ -1,0 +1,42 @@
+.icon {
+    display: inline;
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+.searching-section {
+    width: 280px;
+    height: 59px;
+}
+.logo-section {
+    width: 162px;
+    height: 50px;
+    width: 100%;
+    height: auto;
+}
+.container-wrapper {
+    width: inherit;
+    max-width: 1200px;
+    height: 59px;
+    width: 243px;
+    padding-top: 16px;
+    padding-bottom: 10px;
+    display: inline;
+}
+div {
+    display: block;
+}
+.bar {
+    background: #f53d2d !important;
+    position: fixed;
+    right: 0px;
+    height: 100px;
+    left: 0px;
+}
+
+.bar{
+    background: black ;
+}
+.navbar{
+    display: inline;
+}

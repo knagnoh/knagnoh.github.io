@@ -1,0 +1,35 @@
+.decor1 {
+    left:0px;
+    top:0px;
+}
+.decor2 {
+    bottom: 0px;
+    right: 0px;
+    float:right;
+}
+.name,.block1,.block2,.block3 {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.decorbar {
+    width: 100%;
+    position: relative;
+    height: 300px;
+}
+.photo {
+    position: absolute;
+    top:0px;
+    left:calc(50% - 100px)
+}
+.bg,.skill,.contact {
+    float: left;
+}
+.exp,.language,.aboutme {
+    float: right;
+}
+.bar > img {
+    margin-top:88px;
+}
+.name:hover {
+    color: pink;
+}

@@ -1,0 +1,11 @@
+.grid-item{
+    border: solid 1px black;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.other {
+    padding: 40 px;
+}

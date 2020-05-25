@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <canvas id="canvas"></canvas>
+  </body>
+</html>
+<script>
+var canvas = document.getElementById("canvas");
+  var c = canvas.getContext("2d");
+
+  canvas.width = innerWidth - 20;
+  canvas.height = innerHeight - 20;
+
+  class Ball {
+    constructor(x, y, speed, radius, color) {
+      // state of ball
+      // 0: top, 1: right, 2: bottom, 3: left
+      this.state = 0;
+      this.margin = 1;
+      this.x = x + this.margin;
+      this.y = y + this.margin;
+      this.radius = radius;
+      this.color = color;
+
+      // last timestamp
+      this.timestamp = performance.now();
+
+      // van toc [m/s]
+      this.speed = speed;
+
+      // gia toc [m/s2]
+      this.a = 0;
+
+      // gia toc ma sat [m/s2]
+      this.ams = -5;
+
+      // khoi luong [kg]
+      this.weight = 1;
+
+      // flag for pause status
+      this.pauseFlag = true;
+    }
+
+    // Change pause status
+    pause() {
+      this.pauseFlag = !this.pauseFlag;
+    }
+
+    // Be pushed
+    pushed(force) {
+      if (!this.pauseFlag) {
+        this.a = force / this.weight;
+        console.log(this.a);
+      }
+    }
+
+    // Draw the ball
+    draw() {
+      c.beginPath();
+      c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+      c.fillStyle = this.color;
+      c.fill();
+      c.stroke();
+      c.closePath();
+    }
+
+    // Calculate speed after each step
+    calSpeed() {
+      var currentAccel = this.a + this.ams;
+      var currentTimestamp = performance.now();
+
+      var deltaTime = (currentTimestamp - this.timestamp) / 1000;
+
+      // Update speed
+      this.speed += currentAccel * deltaTime;
+      if (this.speed <= 0) this.speed = 0;
+
+      // Update acceleration
+      this.a = this.a + this.ams * deltaTime;
+      if (this.a <= 0) this.a = 0;
+
+      // Update current timestamp
+      this.timestamp = currentTimestamp;
+    }
+
+    // Move the ball
+    move(dx, dy) {
+      if (!this.pauseFlag) {
+        this.calSpeed();
+
+        // Change in x and y axises
+        var dx = 0;
+        var dy = 0;
+
+        // State management
+        switch (this.state) {
+          // Ball on top
+          case 0:
+            dx = this.speed;
+            dy = 0;
+            this.color = "green";
+            if (this.x === canvas.width - this.radius - this.margin) {
+              this.state = 1;
+            }
+            break;
+
+          // Ball on right side
+          case 1:
+            dx = 0;
+            dy = this.speed;
+            this.color = "red";
+            if (this.y === canvas.height - this.radius - this.margin) {
+              this.state = 2;
+            }
+            break;
+
+          // Ball at bottom
+          case 2:
+            dx = -this.speed;
+            dy = 0;
+            this.color = "yellow";
+            if (this.x === this.radius) {
+              this.state = 3;
+            }
+            break;
+
+          // Ball on left side
+          case 3:
+            dx = 0;
+            dy = -this.speed;
+            this.color = "blue";
+            if (this.y === this.radius) {
+              this.state = 0;
+            }
+            break;
+
+          // 0 is the defaut state
+          default:
+            this.state = 0;
+        }
+
+        // Set range value of x
+        var maxX = canvas.width - this.radius - this.margin;
+        var minX = this.radius;
+
+        // Set range value of y
+        var maxY = canvas.height - this.radius - this.margin;
+        var minY = this.radius;
+
+        // Update new x
+        this.x = this.x + dx;
+        if (this.x > maxX) this.x = maxX;
+        if (this.x < minX) this.x = minX;
+
+        // Update new y
+        this.y = this.y + dy;
+        if (this.y > maxY) this.y = maxY;
+        if (this.y < minY) this.y = minY;
+      }
+      this.draw();
+    }
+  }
+
+  var radius = 20;
+  var color = "green";
+  var ballSpeed = 20;
+  var ball = new Ball(radius, radius, ballSpeed, radius, color);
+  ball.draw();
+
+  // Move ball forever
+  function animate() {
+    requestAnimationFrame(animate);
+    c.clearRect(0, 0, canvas.width, canvas.height);
+    ball.move();
+  }
+  animate();
+
+  // Check keyboard trigger
+  addEventListener("keydown", function (event) {
+    if (event.keyCode === 32) {
+      ball.pause();
+    } else if (event.keyCode === 39) {
+      ball.pushed(15);
+    }
+  });
+</script>

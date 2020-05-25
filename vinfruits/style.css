@@ -1,0 +1,53 @@
+li#NK,#VN {
+    float: right;
+    margin-right: 10px;
+    font-size: 1.14rem
+}
+.content {
+    list-style-type: none;
+    
+}
+.content li {
+    display: inline-block;
+}
+#KM {
+    font-size: 24px;
+    color: #222222;
+    line-height: 1.5;
+    text-align: left;
+}
+.img {
+    border: solid 1px  #ffab00;
+    padding: 2em;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    height: 385px;
+    width: 220px;
+    display: flex;
+    justify-content: center;
+    font-family: Quicksand
+}
+.box2 {
+    background-color: #ffab00;
+    height: 34px;
+    width: 127px;
+}
+
+.box::after {
+    content: Trái cây nhập khẩu khác;
+}
+
+.text-general{
+    text-align: center;
+}
+
+.contentsau::after{
+    content: "Trái cây nhập khẩu khác";
+}
+.contentsau {
+    text-align: center;
+}
+
+.1::after {
+    content: "Sầu riêng Musang King Malaysia";
+}
